@@ -22,7 +22,7 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background-color: white;
+      background-color: rgb(230, 230, 230);
       display: flex;
       align-items: center;
       padding: 0 0px;
@@ -31,18 +31,20 @@
     }
 
     .nav-tab {
-      color: #ecf0f1;
+      color: #1e2223;
       flex: 1;
       padding: 14px 20px;
       text-align: left;
       text-decoration: none;
       border-bottom: 3px solid transparent;
+      border: 1px solid #1e2223; 
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
     .nav-tab.active {
       border-color: #0d1413;
+      background-color:rgb(219, 219, 219);
     }
 
     .nav-tab:hover {
@@ -56,7 +58,7 @@
       left: 0;
       width: 40%;
       height: calc(100vh - 60px);
-      /*background-color: #5eda5c;*/
+      background-color: rgb(219, 219, 219);
       color: white;
       padding: 20px;
       display: flex;
@@ -69,7 +71,7 @@
 
     .sidebar-content.active {
       display: block;
-      background-color: #5eda5c;
+      background-color: rgb(219, 219, 219);;
     }
 
     
@@ -180,7 +182,7 @@
       margin-left: 40%;
       width: 60%;
       padding: 80px 20px 20px; /* top padding to clear navbar */
-      /*background-color: #5eda5c;*/
+      background-color: rgb(219, 219, 219);
       min-height: 200vh;
       border: 1px solid black;
     }
@@ -195,7 +197,6 @@
     .tab-content.active {
       display: block;
       opacity: 1;
-      background-color: #5eda5c;
     }
   </style>
 </head>
@@ -203,19 +204,19 @@
 
   <!-- Navbar with Full-width Tabs -->
   <div class="navbar">
-    <div class="nav-tab" data-tab="backyart">BACKYART<br>STUDIOS</div>
-    <div class="nav-tab active" data-tab="shannon">S. <br> AMEY</div>
+    <div class="nav-tab active" data-tab="backyart">BACKYART<br>STUDIOS</div>
+    <div class="nav-tab" data-tab="shannon">S. <br> AMEY</div>
     <div class="nav-tab" data-tab="annmai">A. M. L.<br>EJVINDSDATTER</div>
   </div>
 
   <!-- Left Sidebar with Tabbed Content -->
   <div class="left-fixed">
-    <div id="backyart-sidebar" class="sidebar-content">
+    <div id="backyart-sidebar" class="sidebar-content active">
         <h3></h3>
         <p>This sidebar content is related to the Home tab.</p>
     </div>
 
-    <div id="shannon-sidebar" class="sidebar-content active">
+    <div id="shannon-sidebar" class="sidebar-content">
         <h3>Painter, mentor, nomad</h3>
         <div class="sidebar-image-container">
             <img src="img/shannon_amey.png" alt="Sidebar Image" class="sidebar-image">
@@ -244,13 +245,13 @@
 
   <!-- Right Scrollable Content -->
   <div class="right-content">
-    <div id="backyart" class="tab-content">
+    <div id="backyart" class="tab-content active">
         <h2>Home Tab</h2>
         <p>This is the content for the Home tab.</p>
     </div>
 
 
-    <div id="shannon" class="tab-content active">
+    <div id="shannon" class="tab-content">
         <h2>Shannon Tab</h2>
         <p>This is the content for the shannon tab.</p>
 
@@ -287,10 +288,10 @@
     const contents = document.querySelectorAll('.tab-content');
     const sidebars = document.querySelectorAll('.sidebar-content');
     const colors_dictionary={
-            "blank":"white",
-            "backyart":"grey", 
-            "shannon":"green", 
-            "annmai": "yellow"
+            "blank": "#F2F2F2",
+            "backyart":"rgb(219, 219, 219)", 
+            "shannon":"#17F4A4", 
+            "annmai": "#F5DC7C"
         };
 
     tabs.forEach(tab => {
